@@ -1,6 +1,6 @@
 
 
-""""
+"""
 Você deve criar uma classe carro que vai possuir dois atributos compostos por outras duas classes:
 
 1) Motor
@@ -89,8 +89,31 @@ A direção terá a responsabilidade de controlar a direção. Ela oferece os se
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
     'Oeste'
-    
-""""
+"""
+
+class Carro:
+    def __init__(self, direcao, motor):
+        self.motor = motor
+        self.direcao = direcao
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def girar_a_direita(self):
+        self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
+
 
 NORTE = 'Norte'
 SUL = 'Sul'
