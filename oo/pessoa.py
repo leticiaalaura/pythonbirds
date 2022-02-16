@@ -12,6 +12,9 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Homem):
+    olhos = 3
+
 if __name__ == '__main__':
     leticia = Homem(nome='Letícia')
     maria = Homem(leticia, nome='Maria')
@@ -28,13 +31,14 @@ if __name__ == '__main__':
     del maria.olhos
     print(maria.__dict__)
     print(leticia.__dict__)
-    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(maria.olhos)
     print(leticia.olhos)
     print(id(Pessoa.olhos), id(maria.olhos), id(leticia.olhos))
     pessoa = Pessoa('Anonimo')
     print(isinstance(pessoa, Pessoa))
-    rint(isinstance(pessoa, Homem))
+    print(isinstance(pessoa, Homem))
     rint(isinstance(leticia, Pessoa))
     rint(isinstance(leticia, Homem))
+    print(leticia.olhos)
+
